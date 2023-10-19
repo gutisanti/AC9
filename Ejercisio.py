@@ -47,14 +47,14 @@ class DatosMeteorologicos:
                     velocidad_viento_total += float(velocidad)
                     direccion_viento_grados.append(direccion_viento_map[direccion])
 
-        # Calcular las estadísticas
+        # C-e
         num_registros = len(direccion_viento_grados)
         temperatura_promedio = temperatura_total / num_registros
         humedad_promedio = humedad_total / num_registros
         presion_promedio = presion_total / num_registros
         velocidad_viento_promedio = velocidad_viento_total / num_registros
 
-        # Calcular la dirección predominante del viento
+        # C-v
         direccion_promedio_grados = sum(direccion_viento_grados) / num_registros
         direccion_promedio = ""
         for dir, dir_grados in direccion_viento_map.items():
@@ -70,7 +70,7 @@ class DatosMeteorologicos:
             direccion_promedio
         )
 
-# Ejemplo de uso
+# E-u
 archivo_meteorologico = "datos_meteorologicos.txt"
 datos = DatosMeteorologicos(archivo_meteorologico)
 estadisticas = datos.procesar_datos()
@@ -79,3 +79,5 @@ print("Humedad promedio:", estadisticas[1])
 print("Presión promedio:", estadisticas[2])
 print("Velocidad del viento promedio:", estadisticas[3])
 print("Dirección predominante del viento:", estadisticas[4])
+
+# C-e: estadisticas, C-v: viento, E-u: prints?
